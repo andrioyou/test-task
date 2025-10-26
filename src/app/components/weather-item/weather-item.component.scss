@@ -1,0 +1,19 @@
+.weather-item {
+  &__date {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  &__title,
+  &__temp,
+  &__feels-like,
+  &__humidity {
+    margin: 0 0 5px;
+  }
+}

@@ -1,0 +1,19 @@
+<div class="app">
+  <div class="container">
+    <h1>Check your weather!</h1>
+    <br />
+    <app-search-city
+      [cities]="cities()"
+      (searchCity)="searchCity($event)"
+      (citySelected)="getCityWeather($event)"
+    ></app-search-city>
+    <div class="app__search-city-state">
+      @if (citiesAreLoading()) {
+      <app-spinner></app-spinner>
+      } @else if (citiesError()) {
+      <p class="app__error">Something went wrong...</p>
+      }
+    </div>
+    <app-weather-list [weatherList]="weatherList()"></app-weather-list>
+  </div>
+</div>

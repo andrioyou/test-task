@@ -1,0 +1,7 @@
+<div class="weather-list row">
+  @for (weather of weatherList(); track weather) {
+  <div class="weather-list__item col-xl-3">
+    <app-weather-item [weather]="weather"></app-weather-item>
+  </div>
+  }
+</div>

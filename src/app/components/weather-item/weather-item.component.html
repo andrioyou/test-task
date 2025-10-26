@@ -1,0 +1,15 @@
+<mat-card class="weather-item" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title class="weather-item__date">{{
+      date() | date : 'EEEE, MMM d, h:mm'
+    }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    @for (item of weather().weather; track item) {
+    <p class="weather-item__title">{{ item.main }}, {{ item.description }}</p>
+    }
+    <p class="weather-item__temp">Temperature: {{ weather().main.temp }}°</p>
+    <p class="weather-item__feels-like">Feels like: {{ weather().main.feels_like }}°</p>
+    <p class="weather-item__humidity">Humidity: {{ weather().main.humidity }}%</p>
+  </mat-card-content>
+</mat-card>

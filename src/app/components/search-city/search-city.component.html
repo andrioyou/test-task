@@ -1,0 +1,13 @@
+<form class="search-city">
+  <mat-form-field class="search-city__field">
+    <mat-label>Enter city name</mat-label>
+    <input type="text" matInput [formControl]="cityInput" [matAutocomplete]="auto" />
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      @for (city of cities(); track city) {
+      <mat-option [value]="city.name" (click)="selectOption(city)">
+        <span>{{ city.name }}</span> | <span>{{ city.country }} ({{ city.state }})</span>
+      </mat-option>
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
